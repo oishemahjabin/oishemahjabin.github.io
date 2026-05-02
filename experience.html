@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Mahjabin Rahman Oishe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" style="display:flex;align-items:center;gap:.65rem;text-decoration:none;">
+        <svg style="width:36px;height:36px;flex-shrink:0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#1e3a8a"/>
+          <path d="M7 25V11l5 7 5-7v14" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M19 11h5a3 3 0 010 6h-5m5 0l4 8" stroke="#93c5fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="28" cy="28" r="3.5" stroke="#2563eb" stroke-width="1.4" fill="none"/>
+        </svg>
+        <span style="font-family:Cormorant Garamond,Georgia,serif;font-size:1.05rem;font-weight:600;color:#1e293b;white-space:nowrap">Mahjabin Rahman <em style="font-style:italic;color:#2563eb">Oishe</em></span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="ph-inner">
+      <p class="ph-eyebrow">Professional &amp; Academic Work</p>
+      <h1>Experience</h1>
+    </div>
+    <!-- decorative grid lines -->
+    <div class="ph-grid" aria-hidden="true"></div>
+  </section>
+
+  <main class="page-main">
+    <div class="pm-inner">
+
+      <!-- ── RESEARCH EXPERIENCE (moved first) ── -->
+      <div class="exp-section-header">
+        <span class="exp-section-tag">Research</span>
+        <h2 class="section-heading">Research Experience</h2>
+      </div>
+
+      <div class="exp-bento">
+
+        <article class="exp-bento-card exp-bento-card--featured">
+          <div class="ebc-top">
+            <div class="ebc-icon">🔬</div>
+            <div class="ebc-badge ebc-badge--active">Current</div>
+          </div>
+          <div class="ebc-period">Summer 2026 — Present</div>
+          <h3>Graduate Research Assistant</h3>
+          <p class="ebc-org">SIGNAL Lab · Colorado State University</p>
+          <p class="ebc-loc">Fort Collins, CO, USA</p>
+          <p class="ebc-desc">I am interested in developing reliable, interpretable, and computationally efficient models
+that can support clinical decision-making and improve healthcare outcomes.</p>
+          <div class="ebc-chips">
+            <span>Machine Learning</span>
+            <span>Computer Vision</span>
+            <span>Medical Image Analysis</span>
+            <span>Explainable AI</span>
+          </div>
+          <div class="ebc-supervisor">
+            <span class="ebc-sup-label">Supervisor</span>
+            <span class="ebc-sup-name">Dr. Bruce Draper</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ── TEACHING EXPERIENCE (moved second) ── -->
+      <div class="exp-section-header" style="margin-top: 4rem;">
+        <span class="exp-section-tag">Teaching</span>
+        <h2 class="section-heading">Teaching Experience</h2>
+      </div>
+
+      <div class="exp-bento">
+
+        <article class="exp-bento-card exp-bento-card--teaching">
+          <div class="ebc-top">
+            <div class="ebc-icon">🏫</div>
+            <div class="ebc-badge">Dec 2023 — Mar 2025</div>
+          </div>
+          <h3>Lecturer</h3>
+          <p class="ebc-org">Department of Computer Science and Engineering</p>
+          <p class="ebc-loc">Green University of Bangladesh · Dhaka, Bangladesh</p>
+          <p class="ebc-desc">Delivered lectures and conducted labs for several undergraduate courses. Recognized by the <strong>Center of Excellence in Teaching and Learning</strong> as a proactive and effective educator.</p>
+        </article>
+
+      </div>
+
+      <!-- Courses taught — magazine-style grid -->
+      <h2 class="section-heading">Courses Taught</h2>
+      <div class="courses-mosaic">
+        <article class="cm-card">
+          <div class="cm-num">01</div>
+          <div class="cm-icon">⚙</div>
+          <h4>Algorithms</h4>
+          <p>Design and analysis of algorithms, complexity, sorting, graph algorithms, and dynamic programming.</p>
+        </article>
+        <article class="cm-card">
+          <div class="cm-num">02</div>
+          <div class="cm-icon">🤖</div>
+          <h4>Machine Learning</h4>
+          <p>Supervised and unsupervised learning, model evaluation, neural networks, practical ML.</p>
+        </article>
+        <article class="cm-card">
+          <div class="cm-num">03</div>
+          <div class="cm-icon">📡</div>
+          <h4>Data Communication</h4>
+          <p>Data transmission, networking protocols, signal encoding, error detection.</p>
+        </article>
+        <article class="cm-card">
+          <div class="cm-num">04</div>
+          <div class="cm-icon">🖥</div>
+          <h4>Microprocessors &amp; Microcontrollers</h4>
+          <p>Architecture, instruction sets, assembly programming, embedded systems.</p>
+        </article>
+        <article class="cm-card">
+          <div class="cm-num">05</div>
+          <div class="cm-icon">🌐</div>
+          <h4>Web Programming</h4>
+          <p>HTML, CSS, JavaScript, PHP, and database-driven web applications.</p>
+        </article>
+        <article class="cm-card">
+          <div class="cm-num">06</div>
+          <div class="cm-icon">📝</div>
+          <h4>Structured Programming</h4>
+          <p>C fundamentals, control structures, functions, pointers, file I/O.</p>
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong>Mahjabin Rahman Oishe</strong>
+        <span>Graduate Research Assistant · Department of Computer Science · Colorado State University</span>
+      </div>
+      <p class="footer-copy">© 2026 Mahjabin Rahman Oishe</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
