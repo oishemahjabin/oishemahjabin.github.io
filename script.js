@@ -27,39 +27,52 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
 items.forEach(el => obs.observe(el));
 
-function handleCollab() {
+async function handleCollab() {
   const name = document.getElementById('col-name')?.value.trim();
   const email = document.getElementById('col-email')?.value.trim();
+  const topic = document.getElementById('col-topic')?.value;
   const msg = document.getElementById('col-msg')?.value.trim();
   if (!name || !email || !msg) {
     alert('Please fill in your name, email, and message.');
     return;
   }
-  const mailto = `mailto:mahjabinoishe@gmail.com?subject=Collaboration%20Request%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nFrom: ' + name + '\nEmail: ' + email)}`;
-  window.location.href = mailto;
-  document.getElementById('collab-success').classList.add('visible');
+
+  const btn = document.querySelector('.collab-btn');
+  const originalText = btn.innerHTML;
+  btn.innerText = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/mahjabinoishe@gmail.com", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+          name: name,
+          email: email,
+          topic: topic || "Not specified",
+          message: msg,
+          _subject: "New Collaboration Request from " + name
+      })
+    });
+
+    if (response.ok) {
+      document.getElementById('collab-success').classList.add('visible');
+      document.getElementById('col-name').value = '';
+      document.getElementById('col-email').value = '';
+      document.getElementById('col-topic').value = '';
+      document.getElementById('col-msg').value = '';
+    } else {
+      alert('Oops! There was a problem submitting your form.');
+    }
+  } catch (error) {
+    alert('Oops! There was a problem submitting your form.');
+  } finally {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+  }
 }
 
-// Auto-update citation count (Animated Counter)
-document.addEventListener('DOMContentLoaded', () => {
-  const citEl = document.getElementById('citation-count');
-  if (citEl) {
-    // Note: Google Scholar does not provide a public API that can be accessed 
-    // directly from the frontend without CORS/CAPTCHA issues. 
-    // This animates the counter up to your current Google Scholar count (418).
-    // You can manually update the 'target' variable here as your citations grow.
-    const target = 418;
-    let count = 0;
-    const speed = Math.max(10, Math.floor(2000 / target)); // ~2s animation
-    
-    const interval = setInterval(() => {
-      count += Math.ceil(target / 50); 
-      if (count >= target) {
-        citEl.innerText = target;
-        clearInterval(interval);
-      } else {
-        citEl.innerText = count;
-      }
-    }, speed);
-  }
-});
+
